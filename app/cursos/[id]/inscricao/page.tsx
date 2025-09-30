@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, use } from "react"
 import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -10,16 +10,15 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
 import { FileUpload } from "@/components/file-upload"
 import { getCourseById } from "@/data/courses-mock"
 import { enrollmentFormSchema, type EnrollmentFormData, formatCPF, formatPhone } from "@/lib/validations"
 import { ArrowLeft, AlertCircle, Loader2 } from "lucide-react"
 
-export default function EnrollmentPage({ params }: { params: { id: string } }) {
+export default function EnrollmentPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
   const router = useRouter()
-  const course = getCourseById(params.id)
+  const course = getCourseById(id)
   const [files, setFiles] = useState<File[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -88,8 +87,6 @@ export default function EnrollmentPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-
       <main className="flex-1 bg-muted/30">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Back Button */}
@@ -295,8 +292,6 @@ export default function EnrollmentPage({ params }: { params: { id: string } }) {
           </form>
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   )
 }

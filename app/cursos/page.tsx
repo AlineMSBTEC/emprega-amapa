@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
 import { CourseCard } from "@/components/course-card"
 import { mockCourses, getAvailableAreas, getInstitutions } from "@/data/courses-mock"
 import { Search, Filter, X } from "lucide-react"
@@ -65,8 +63,6 @@ export default function CursosPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-
       <main className="flex-1 bg-muted/30">
         <div className="container mx-auto px-4 py-8">
           {/* Page Header */}
@@ -95,70 +91,69 @@ export default function CursosPage() {
               )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="space-y-3">
               {/* Search */}
-              <div className="lg:col-span-2">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    placeholder="Buscar cursos..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-9"
-                  />
-                </div>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Buscar cursos..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-9"
+                />
               </div>
 
-              {/* Area Filter */}
-              <Select value={selectedArea} onValueChange={setSelectedArea}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Área" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Todas as Áreas</SelectItem>
-                  {areas.map((area) => (
-                    <SelectItem key={area} value={area}>
-                      {area}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              {/* Filters Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {/* Area Filter */}
+                <Select value={selectedArea} onValueChange={setSelectedArea}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Área" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Todas as Áreas</SelectItem>
+                    {areas.map((area) => (
+                      <SelectItem key={area} value={area}>
+                        {area}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
 
-              {/* Institution Filter */}
-              <Select
-                value={selectedInstitution}
-                onValueChange={setSelectedInstitution}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Instituição" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Todas Instituições</SelectItem>
-                  {institutions.map((inst) => (
-                    <SelectItem key={inst} value={inst}>
-                      {inst}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                {/* Institution Filter */}
+                <Select
+                  value={selectedInstitution}
+                  onValueChange={setSelectedInstitution}
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Instituição" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Todas as Instituições</SelectItem>
+                    {institutions.map((inst) => (
+                      <SelectItem key={inst} value={inst}>
+                        {inst}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
 
-              {/* Modality Filter */}
-              <Select value={selectedModality} onValueChange={setSelectedModality}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Modalidade" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Todas Modalidades</SelectItem>
-                  <SelectItem value="presencial">Presencial</SelectItem>
-                  <SelectItem value="online">Online</SelectItem>
-                  <SelectItem value="hibrido">Híbrido</SelectItem>
-                </SelectContent>
-              </Select>
+                {/* Modality Filter */}
+                <Select value={selectedModality} onValueChange={setSelectedModality}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Modalidade" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Todas as Modalidades</SelectItem>
+                    <SelectItem value="presencial">Presencial</SelectItem>
+                    <SelectItem value="online">Online</SelectItem>
+                    <SelectItem value="hibrido">Híbrido</SelectItem>
+                  </SelectContent>
+                </Select>
 
-              {/* Status Filter - Hidden by default, shown in second row on mobile */}
-              <div className="md:col-span-2 lg:col-span-5">
+                {/* Status Filter */}
                 <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Status" />
                   </SelectTrigger>
                   <SelectContent>
@@ -211,8 +206,6 @@ export default function CursosPage() {
           )}
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   )
 }

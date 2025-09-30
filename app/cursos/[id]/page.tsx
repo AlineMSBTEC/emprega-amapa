@@ -3,8 +3,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
 import { getCourseById } from "@/data/courses-mock"
 import {
   Clock,
@@ -18,12 +16,13 @@ import {
   ArrowLeft,
 } from "lucide-react"
 
-export default function CourseDetailsPage({
+export default async function CourseDetailsPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
-  const course = getCourseById(params.id)
+  const { id } = await params
+  const course = getCourseById(id)
 
   if (!course) {
     notFound()
@@ -33,8 +32,6 @@ export default function CourseDetailsPage({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-
       <main className="flex-1 bg-muted/30">
         <div className="container mx-auto px-4 py-8">
           {/* Back Button */}
@@ -276,8 +273,6 @@ export default function CourseDetailsPage({
           </div>
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   )
 }

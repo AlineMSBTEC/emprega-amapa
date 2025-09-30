@@ -1,13 +1,12 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
 import { getCourseById } from "@/data/courses-mock"
 import { CheckCircle2, Home, List } from "lucide-react"
 
-export default function ConfirmationPage({ params }: { params: { id: string } }) {
-  const course = getCourseById(params.id)
+export default async function ConfirmationPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const course = getCourseById(id)
 
   if (!course) {
     return (
@@ -24,8 +23,6 @@ export default function ConfirmationPage({ params }: { params: { id: string } })
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-
       <main className="flex-1 bg-muted/30 flex items-center justify-center p-4">
         <div className="max-w-2xl w-full">
           <Card className="text-center">
@@ -134,8 +131,6 @@ export default function ConfirmationPage({ params }: { params: { id: string } })
           </Card>
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   )
 }
