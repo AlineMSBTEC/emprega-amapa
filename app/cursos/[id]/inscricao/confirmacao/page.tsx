@@ -24,25 +24,7 @@ export default function ConfirmationPage({ params }: { params: { id: string } })
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="border-b bg-card">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <BookOpen className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold">Emprega Amapá</h1>
-          </Link>
-          <nav className="flex items-center gap-4">
-            <div className="flex items-center gap-2 pl-4 border-l">
-              <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
-                MS
-              </div>
-              <span className="text-sm font-medium hidden sm:inline">
-                Maria Silva
-              </span>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1 bg-muted/30 flex items-center justify-center p-4">
         <div className="max-w-2xl w-full">
@@ -129,7 +111,6 @@ export default function ConfirmationPage({ params }: { params: { id: string } })
                 </Link>
                 <Link href="/cursos">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    <BookOpen className="mr-2 h-5 w-5" />
                     Buscar Mais Cursos
                   </Button>
                 </Link>
@@ -154,12 +135,7 @@ export default function ConfirmationPage({ params }: { params: { id: string } })
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t bg-card py-8">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Emprega Amapá - Sistema de Qualificação Profissional</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
