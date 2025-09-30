@@ -28,7 +28,6 @@ export default function EnrollmentPage({ params }: { params: { id: string } }) {
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
   } = useForm<EnrollmentFormData>({
     resolver: zodResolver(enrollmentFormSchema),
   })
@@ -62,7 +61,7 @@ export default function EnrollmentPage({ params }: { params: { id: string } }) {
     )
   }
 
-  const onSubmit = async (data: EnrollmentFormData) => {
+  const onSubmit = async () => {
     if (files.length === 0) {
       alert("Por favor, envie pelo menos um documento")
       return
