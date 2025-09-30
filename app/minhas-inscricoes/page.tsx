@@ -4,6 +4,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import { mockUser, mockEnrollments } from "@/data/user-mock"
 import {
   BookOpen,
@@ -50,29 +52,7 @@ export default function MyEnrollmentsPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="border-b bg-card sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <BookOpen className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold">Emprega Amapá</h1>
-          </Link>
-          <nav className="flex items-center gap-4">
-            <Link href="/cursos">
-              <Button variant="ghost">Cursos</Button>
-            </Link>
-            <Link href="/minhas-inscricoes">
-              <Button variant="ghost">Minhas Inscrições</Button>
-            </Link>
-            <div className="flex items-center gap-2 pl-4 border-l">
-              <div className="h-8 w-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
-                MS
-              </div>
-              <span className="text-sm font-medium hidden sm:inline">Maria Silva</span>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1 bg-muted/30">
         <div className="container mx-auto px-4 py-8">
@@ -305,12 +285,7 @@ export default function MyEnrollmentsPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t bg-card py-8 mt-12">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Emprega Amapá - Sistema de Qualificação Profissional</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
