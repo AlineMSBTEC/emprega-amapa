@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx @playwright/mcp@latest"
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {}
+    },
+      "Figma": {
+        "url": "http://127.0.0.1:3845/mcp"
+    },
+      "html.to.design": {
+      "url": "https://h2d-mcp.divriots.com/b6bbb67e-14ab-45f4-b49f-f66eae36ee39/mcp"
+    },
+      "shadcn": {
+        "command": "npx",
+        "args": ["shadcn@latest", "mcp"]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+  }
+}
