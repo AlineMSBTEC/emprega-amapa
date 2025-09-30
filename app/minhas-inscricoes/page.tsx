@@ -17,12 +17,13 @@ import {
   CheckCircle2,
   AlertCircle,
   Hourglass,
+  type LucideIcon,
 } from "lucide-react"
 import { EnrollmentStatus } from "@/types"
 
 const statusConfig: Record<
   EnrollmentStatus,
-  { label: string; variant: "default" | "secondary" | "destructive" | "outline"; icon: any }
+  { label: string; variant: "default" | "secondary" | "destructive" | "outline"; icon: LucideIcon }
 > = {
   pending: {
     label: "Pendente",

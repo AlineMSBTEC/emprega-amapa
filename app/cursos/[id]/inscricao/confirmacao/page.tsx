@@ -89,7 +89,7 @@ export default function ConfirmationPage({ params }: { params: { id: string } })
                     <span className="font-semibold text-foreground">3.</span>
                     <span>
                       Acompanhe o andamento na área{" "}
-                      <strong className="text-foreground">"Minhas Inscrições"</strong>
+                      <strong className="text-foreground">&ldquo;Minhas Inscrições&rdquo;</strong>
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
