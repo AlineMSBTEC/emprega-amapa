@@ -1,14 +1,10 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
 import { BookOpen, Users, Award, ArrowRight } from "lucide-react"
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-
       {/* Hero Section */}
       <main className="flex-1">
         <section className="bg-gradient-to-b from-muted/50 to-background py-20">
@@ -103,8 +99,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   )
 }

@@ -2,7 +2,13 @@
 
 export type CourseStatus = "open" | "closed"
 export type CourseModality = "presencial" | "online" | "hibrido"
-export type EnrollmentStatus = "pending" | "approved" | "rejected" | "waitlist"
+export type EnrollmentStatus =
+  | "pending"
+  | "in-review"
+  | "approved"
+  | "waitlist"
+  | "rejected"
+  | "completed"
 
 export interface Course {
   id: string
@@ -72,4 +78,67 @@ export interface User {
   enrollments: Enrollment[]
   completedCourses: number
   points: number
+}
+
+// ========================================
+// GAMIFICATION TYPES
+// ========================================
+
+export type LevelCategory = "beginner" | "intermediate" | "advanced" | "expert"
+export type BadgeRarity = "common" | "rare" | "epic" | "legendary"
+
+export interface XPLevel {
+  level: number
+  title: string
+  xpRequired: number
+  category: LevelCategory
+}
+
+export interface Achievement {
+  id: string
+  title: string
+  description: string
+  icon: string
+  rarity: BadgeRarity
+  xpReward: number
+  unlockedAt?: string
+  isLocked: boolean
+}
+
+export interface UserGamificationProfile {
+  userId: string
+  xp: number
+  level: XPLevel
+  achievements: Achievement[]
+  coursesCompleted: number
+  certificatesUploaded: number
+  streakDays: number
+  rankingPosition?: number
+}
+
+export interface RankingUser {
+  userId: string
+  name: string
+  avatar?: string
+  xp: number
+  level: XPLevel
+  coursesCompleted: number
+  achievements: Achievement[]
+  position: number
+  municipality?: string
+  specialty?: string
+}
+
+export interface EnrollmentGamified extends Enrollment {
+  xpEarned: number
+  achievementsUnlocked: Achievement[]
+}
+
+export interface XPTransaction {
+  id: string
+  userId: string
+  amount: number
+  reason: "course_completed" | "certificate_uploaded" | "milestone" | "streak"
+  relatedId?: string // courseId, achievementId, etc
+  timestamp: string
 }

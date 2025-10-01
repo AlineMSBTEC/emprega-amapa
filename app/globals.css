@@ -99,6 +99,107 @@
   --sidebar-accent-foreground: oklch(0.2 0.01 264);
   --sidebar-border: oklch(0.88 0.005 264);
   --sidebar-ring: oklch(0.68 0.21 42);
+
+  /* ========================================
+     GAMIFICATION - CORES DE STATUS
+     ======================================== */
+
+  /* Status: Pendente */
+  --status-pending: oklch(0.75 0.18 85);
+  --status-pending-foreground: oklch(0.2 0.01 264);
+  --status-pending-light: oklch(0.95 0.08 85);
+
+  /* Status: Em Avaliação */
+  --status-in-review: oklch(0.65 0.15 220);
+  --status-in-review-foreground: oklch(1 0 0);
+  --status-in-review-light: oklch(0.95 0.08 220);
+
+  /* Status: Aprovado */
+  --status-approved: oklch(0.65 0.2 145);
+  --status-approved-foreground: oklch(1 0 0);
+  --status-approved-light: oklch(0.95 0.1 145);
+
+  /* Status: Lista de Espera */
+  --status-waitlist: oklch(0.75 0.18 85);
+  --status-waitlist-foreground: oklch(0.2 0.01 264);
+  --status-waitlist-light: oklch(0.95 0.08 85);
+
+  /* Status: Recusado */
+  --status-rejected: oklch(0.55 0.22 25);
+  --status-rejected-foreground: oklch(1 0 0);
+  --status-rejected-light: oklch(0.95 0.1 25);
+
+  /* Status: Finalizado */
+  --status-completed: oklch(0.42 0.25 278);
+  --status-completed-foreground: oklch(1 0 0);
+  --status-completed-light: oklch(0.95 0.12 278);
+
+  /* ========================================
+     GAMIFICATION - XP E PROGRESSO
+     ======================================== */
+
+  --xp-bar-fill: oklch(0.68 0.21 42);
+  --xp-bar-background: oklch(0.95 0.005 264);
+  --xp-bar-border: oklch(0.88 0.005 264);
+  --xp-glow: oklch(0.68 0.21 42 / 0.3);
+  --xp-text: oklch(0.2 0.01 264);
+  --xp-gradient-start: oklch(0.68 0.21 42);
+  --xp-gradient-end: oklch(0.75 0.19 50);
+
+  /* ========================================
+     GAMIFICATION - MEDALHAS
+     ======================================== */
+
+  --medal-gold: oklch(0.78 0.18 85);
+  --medal-gold-shine: oklch(0.88 0.16 85);
+  --medal-gold-shadow: oklch(0.68 0.16 80);
+  --medal-silver: oklch(0.75 0.01 264);
+  --medal-silver-shine: oklch(0.85 0.01 264);
+  --medal-silver-shadow: oklch(0.65 0.01 264);
+  --medal-bronze: oklch(0.58 0.12 45);
+  --medal-bronze-shine: oklch(0.68 0.12 45);
+  --medal-bronze-shadow: oklch(0.48 0.12 45);
+
+  /* ========================================
+     GAMIFICATION - NÍVEIS
+     ======================================== */
+
+  --level-beginner: oklch(0.65 0.2 145);
+  --level-beginner-light: oklch(0.95 0.1 145);
+  --level-beginner-dark: oklch(0.55 0.22 145);
+  --level-intermediate: oklch(0.65 0.15 220);
+  --level-intermediate-light: oklch(0.95 0.08 220);
+  --level-intermediate-dark: oklch(0.55 0.17 220);
+  --level-advanced: oklch(0.62 0.32 318);
+  --level-advanced-light: oklch(0.95 0.15 318);
+  --level-advanced-dark: oklch(0.52 0.35 318);
+  --level-expert: oklch(0.42 0.25 278);
+  --level-expert-light: oklch(0.95 0.12 278);
+  --level-expert-dark: oklch(0.32 0.28 278);
+
+  /* ========================================
+     GAMIFICATION - BADGES/EMBLEMAS
+     ======================================== */
+
+  --badge-common: oklch(0.75 0.01 264);
+  --badge-common-border: oklch(0.65 0.01 264);
+  --badge-rare: oklch(0.65 0.15 220);
+  --badge-rare-border: oklch(0.55 0.17 220);
+  --badge-epic: oklch(0.62 0.32 318);
+  --badge-epic-border: oklch(0.52 0.35 318);
+  --badge-legendary: oklch(0.78 0.18 85);
+  --badge-legendary-border: oklch(0.68 0.16 80);
+
+  /* ========================================
+     GAMIFICATION - SPACING & SIZING
+     ======================================== */
+
+  --gamification-xs: 0.25rem;
+  --gamification-sm: 0.5rem;
+  --gamification-md: 1rem;
+  --gamification-lg: 1.5rem;
+  --gamification-xl: 2rem;
+  --gamification-2xl: 3rem;
 }
 
 .dark {
@@ -133,6 +234,20 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Gamification - Dark Mode Overrides */
+  --xp-bar-background: oklch(0.269 0 0);
+  --xp-bar-border: oklch(1 0 0 / 10%);
+  --status-pending-light: oklch(0.269 0.08 85);
+  --status-in-review-light: oklch(0.269 0.08 220);
+  --status-approved-light: oklch(0.269 0.1 145);
+  --status-waitlist-light: oklch(0.269 0.08 85);
+  --status-rejected-light: oklch(0.269 0.1 25);
+  --status-completed-light: oklch(0.269 0.12 278);
+  --level-beginner-light: oklch(0.269 0.1 145);
+  --level-intermediate-light: oklch(0.269 0.08 220);
+  --level-advanced-light: oklch(0.269 0.15 318);
+  --level-expert-light: oklch(0.269 0.12 278);
 }
 
 @layer base {

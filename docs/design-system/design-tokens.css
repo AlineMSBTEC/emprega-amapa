@@ -1,0 +1,578 @@
+/**
+ * Design Tokens - Gamification System
+ * Emprega Amapá
+ *
+ * Este arquivo contém todos os design tokens para o sistema de gamificação.
+ * Integra-se com o app/globals.css existente.
+ *
+ * Para usar: Adicionar estes tokens ao :root em app/globals.css
+ */
+
+:root {
+  /* ========================================
+     CORES DE STATUS - INSCRIÇÕES
+     ======================================== */
+
+  /* Status: Pendente - Aguardando ação */
+  --status-pending: oklch(0.75 0.18 85);
+  --status-pending-foreground: oklch(0.2 0.01 264);
+  --status-pending-light: oklch(0.95 0.08 85);
+
+  /* Status: Em Avaliação - Em processo */
+  --status-in-review: oklch(0.65 0.15 220);
+  --status-in-review-foreground: oklch(1 0 0);
+  --status-in-review-light: oklch(0.95 0.08 220);
+
+  /* Status: Aprovado - Sucesso confirmado */
+  --status-approved: oklch(0.65 0.2 145);
+  --status-approved-foreground: oklch(1 0 0);
+  --status-approved-light: oklch(0.95 0.1 145);
+
+  /* Status: Lista de Espera - Situação temporária */
+  --status-waitlist: oklch(0.75 0.18 85);
+  --status-waitlist-foreground: oklch(0.2 0.01 264);
+  --status-waitlist-light: oklch(0.95 0.08 85);
+
+  /* Status: Recusado - Feedback negativo */
+  --status-rejected: oklch(0.55 0.22 25);
+  --status-rejected-foreground: oklch(1 0 0);
+  --status-rejected-light: oklch(0.95 0.1 25);
+
+  /* Status: Finalizado - Curso concluído */
+  --status-completed: oklch(0.42 0.25 278);
+  --status-completed-foreground: oklch(1 0 0);
+  --status-completed-light: oklch(0.95 0.12 278);
+
+  /* ========================================
+     XP E PROGRESSO
+     ======================================== */
+
+  /* Barra de XP */
+  --xp-bar-fill: oklch(0.68 0.21 42);              /* Orange - preenchimento */
+  --xp-bar-background: oklch(0.95 0.005 264);      /* Light gray - fundo */
+  --xp-bar-border: oklch(0.88 0.005 264);          /* Border sutil */
+  --xp-glow: oklch(0.68 0.21 42 / 0.3);            /* Efeito brilho */
+  --xp-text: oklch(0.2 0.01 264);                  /* Texto XP */
+
+  /* Gradiente XP (opcional) */
+  --xp-gradient-start: oklch(0.68 0.21 42);
+  --xp-gradient-end: oklch(0.75 0.19 50);
+
+  /* ========================================
+     MEDALHAS - RANKING
+     ======================================== */
+
+  /* Gold Medal - 1º Lugar */
+  --medal-gold: oklch(0.78 0.18 85);               /* #FFD700 */
+  --medal-gold-shine: oklch(0.88 0.16 85);         /* Highlight */
+  --medal-gold-shadow: oklch(0.68 0.16 80);        /* Sombra */
+
+  /* Silver Medal - 2º Lugar */
+  --medal-silver: oklch(0.75 0.01 264);            /* #C0C0C0 */
+  --medal-silver-shine: oklch(0.85 0.01 264);      /* Highlight */
+  --medal-silver-shadow: oklch(0.65 0.01 264);     /* Sombra */
+
+  /* Bronze Medal - 3º Lugar */
+  --medal-bronze: oklch(0.58 0.12 45);             /* #CD7F32 */
+  --medal-bronze-shine: oklch(0.68 0.12 45);       /* Highlight */
+  --medal-bronze-shadow: oklch(0.48 0.12 45);      /* Sombra */
+
+  /* ========================================
+     NÍVEIS (LEVELS)
+     ======================================== */
+
+  /* Beginner - Níveis 1-3 */
+  --level-beginner: oklch(0.65 0.2 145);           /* Verde */
+  --level-beginner-light: oklch(0.95 0.1 145);
+  --level-beginner-dark: oklch(0.55 0.22 145);
+
+  /* Intermediate - Níveis 4-6 */
+  --level-intermediate: oklch(0.65 0.15 220);      /* Azul */
+  --level-intermediate-light: oklch(0.95 0.08 220);
+  --level-intermediate-dark: oklch(0.55 0.17 220);
+
+  /* Advanced - Níveis 7-9 */
+  --level-advanced: oklch(0.62 0.32 318);          /* Magenta */
+  --level-advanced-light: oklch(0.95 0.15 318);
+  --level-advanced-dark: oklch(0.52 0.35 318);
+
+  /* Expert - Níveis 10+ */
+  --level-expert: oklch(0.42 0.25 278);            /* Azul escuro */
+  --level-expert-light: oklch(0.95 0.12 278);
+  --level-expert-dark: oklch(0.32 0.28 278);
+
+  /* ========================================
+     BADGES E CONQUISTAS
+     ======================================== */
+
+  /* Common Badges */
+  --badge-common: oklch(0.75 0.01 264);            /* Cinza claro */
+  --badge-common-border: oklch(0.65 0.01 264);
+
+  /* Rare Badges */
+  --badge-rare: oklch(0.65 0.15 220);              /* Azul */
+  --badge-rare-border: oklch(0.55 0.17 220);
+
+  /* Epic Badges */
+  --badge-epic: oklch(0.62 0.32 318);              /* Magenta */
+  --badge-epic-border: oklch(0.52 0.35 318);
+
+  /* Legendary Badges */
+  --badge-legendary: oklch(0.78 0.18 85);          /* Dourado */
+  --badge-legendary-border: oklch(0.68 0.2 85);
+
+  /* Badge States */
+  --badge-locked: oklch(0.5 0.01 264);             /* Bloqueado */
+  --badge-locked-bg: oklch(0.95 0.005 264);
+  --badge-new-glow: oklch(0.68 0.21 42 / 0.4);    /* Novo badge */
+
+  /* ========================================
+     GRADIENTES
+     ======================================== */
+
+  /* Achievement Gradient */
+  --gradient-achievement: linear-gradient(
+    135deg,
+    oklch(0.68 0.21 42),      /* Orange */
+    oklch(0.62 0.32 318)      /* Magenta */
+  );
+
+  /* XP Bar Gradient */
+  --gradient-xp: linear-gradient(
+    90deg,
+    oklch(0.68 0.21 42),      /* Orange */
+    oklch(0.75 0.19 50)       /* Orange lighter */
+  );
+
+  /* Gold Medal Gradient */
+  --gradient-gold: linear-gradient(
+    145deg,
+    oklch(0.88 0.16 85),      /* Light gold */
+    oklch(0.78 0.18 85),      /* Gold */
+    oklch(0.68 0.16 80)       /* Darker gold */
+  );
+
+  /* Silver Medal Gradient */
+  --gradient-silver: linear-gradient(
+    145deg,
+    oklch(0.85 0.01 264),     /* Light silver */
+    oklch(0.75 0.01 264),     /* Silver */
+    oklch(0.65 0.01 264)      /* Darker silver */
+  );
+
+  /* Bronze Medal Gradient */
+  --gradient-bronze: linear-gradient(
+    145deg,
+    oklch(0.68 0.12 45),      /* Light bronze */
+    oklch(0.58 0.12 45),      /* Bronze */
+    oklch(0.48 0.12 45)       /* Darker bronze */
+  );
+
+  /* Level Up Celebration Gradient */
+  --gradient-celebration: linear-gradient(
+    135deg,
+    oklch(0.68 0.21 42) 0%,   /* Orange */
+    oklch(0.62 0.32 318) 50%, /* Magenta */
+    oklch(0.42 0.25 278) 100% /* Blue */
+  );
+
+  /* ========================================
+     TIPOGRAFIA
+     ======================================== */
+
+  /* Títulos e Destaque */
+  --font-hero: 600 2rem/2.5rem var(--font-geist-sans);         /* 32px */
+  --font-heading: 600 1.5rem/2rem var(--font-geist-sans);      /* 24px */
+  --font-subheading: 600 1.25rem/1.75rem var(--font-geist-sans); /* 20px */
+
+  /* Informações e Stats */
+  --font-stat-large: 700 3rem/3.5rem var(--font-geist-sans);   /* 48px */
+  --font-stat-medium: 700 2rem/2.5rem var(--font-geist-sans);  /* 32px */
+  --font-stat-small: 600 1.5rem/2rem var(--font-geist-sans);   /* 24px */
+
+  /* Corpo e Labels */
+  --font-body: 400 1rem/1.5rem var(--font-geist-sans);         /* 16px */
+  --font-label: 500 0.875rem/1.25rem var(--font-geist-sans);   /* 14px */
+  --font-caption: 400 0.75rem/1rem var(--font-geist-sans);     /* 12px */
+
+  /* Badges e Tags */
+  --font-badge: 600 0.75rem/1rem var(--font-geist-sans);       /* 12px */
+  --font-badge-small: 600 0.625rem/0.875rem var(--font-geist-sans); /* 10px */
+
+  /* ========================================
+     ESPAÇAMENTO
+     ======================================== */
+
+  --space-xs: 0.25rem;   /* 4px  - gaps mínimos */
+  --space-sm: 0.5rem;    /* 8px  - espaços pequenos */
+  --space-md: 1rem;      /* 16px - espaçamento padrão */
+  --space-lg: 1.5rem;    /* 24px - seções */
+  --space-xl: 2rem;      /* 32px - grandes seções */
+  --space-2xl: 3rem;     /* 48px - separação de blocos */
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+
+  --radius-sm: calc(var(--radius) - 4px);   /* 6px  - pequeno */
+  --radius-md: calc(var(--radius) - 2px);   /* 8px  - médio */
+  --radius-lg: var(--radius);               /* 10px - padrão */
+  --radius-xl: calc(var(--radius) + 4px);   /* 14px - grande */
+  --radius-full: 9999px;                    /* circular */
+
+  /* ========================================
+     SHADOWS E ELEVAÇÃO
+     ======================================== */
+
+  /* Elevações Padrão */
+  --shadow-xs: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+  --shadow-sm: 0 2px 4px -1px oklch(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px oklch(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px oklch(0 0 0 / 0.25);
+
+  /* Glow Effects para Conquistas */
+  --shadow-glow-primary: 0 0 20px oklch(0.68 0.21 42 / 0.4);
+  --shadow-glow-gold: 0 0 20px oklch(0.78 0.18 85 / 0.5);
+  --shadow-glow-magenta: 0 0 20px oklch(0.62 0.32 318 / 0.4);
+  --shadow-glow-blue: 0 0 20px oklch(0.42 0.25 278 / 0.4);
+
+  /* Inner Shadows */
+  --shadow-inner: inset 0 2px 4px 0 oklch(0 0 0 / 0.05);
+
+  /* ========================================
+     ANIMAÇÕES
+     ======================================== */
+
+  /* Easing Functions */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);         /* ease-in-out padrão */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);                /* entrada */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);               /* saída */
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* bounce suave */
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);      /* suave */
+
+  /* Durações */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-default: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  --duration-celebrate: 600ms;
+
+  /* ========================================
+     Z-INDEX
+     ======================================== */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
+  --z-notification: 1700;
+  --z-celebration: 1800;
+}
+
+/* ========================================
+   DARK MODE OVERRIDES
+   ======================================== */
+
+.dark {
+  /* Status colors ajustados para dark mode */
+  --status-pending: oklch(0.7 0.16 85);
+  --status-in-review: oklch(0.6 0.14 220);
+  --status-approved: oklch(0.6 0.18 145);
+  --status-waitlist: oklch(0.7 0.16 85);
+  --status-rejected: oklch(0.5 0.2 25);
+  --status-completed: oklch(0.45 0.23 278);
+
+  /* XP Bar */
+  --xp-bar-background: oklch(0.3 0.01 264);
+  --xp-bar-border: oklch(0.4 0.01 264);
+
+  /* Badges bloqueados */
+  --badge-locked: oklch(0.4 0.01 264);
+  --badge-locked-bg: oklch(0.25 0.005 264);
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* XP Bar Component */
+.xp-bar {
+  height: 12px;
+  width: 100%;
+  background: var(--xp-bar-background);
+  border: 1px solid var(--xp-bar-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: var(--xp-bar-fill);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-default) var(--ease-out);
+}
+
+.xp-bar-fill.gradient {
+  background: var(--gradient-xp);
+}
+
+/* Medal Component */
+.medal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  position: relative;
+}
+
+.medal-gold {
+  background: var(--gradient-gold);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.medal-silver {
+  background: var(--gradient-silver);
+  box-shadow: var(--shadow-lg);
+}
+
+.medal-bronze {
+  background: var(--gradient-bronze);
+  box-shadow: var(--shadow-md);
+}
+
+/* Badge Component */
+.badge-unlock {
+  animation: badge-unlock var(--duration-celebrate) var(--ease-bounce);
+}
+
+.badge-locked {
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+.badge-new {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Status Badge Component */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-md);
+  font: var(--font-badge);
+  font-weight: 600;
+}
+
+.status-pending {
+  background: var(--status-pending-light);
+  color: var(--status-pending-foreground);
+  border: 1px solid var(--status-pending);
+}
+
+.status-in-review {
+  background: var(--status-in-review-light);
+  color: var(--status-in-review-foreground);
+  border: 1px solid var(--status-in-review);
+}
+
+.status-approved {
+  background: var(--status-approved-light);
+  color: var(--status-approved-foreground);
+  border: 1px solid var(--status-approved);
+}
+
+.status-waitlist {
+  background: var(--status-waitlist-light);
+  color: var(--status-waitlist-foreground);
+  border: 1px solid var(--status-waitlist);
+}
+
+.status-rejected {
+  background: var(--status-rejected-light);
+  color: var(--status-rejected-foreground);
+  border: 1px solid var(--status-rejected);
+}
+
+.status-completed {
+  background: var(--status-completed-light);
+  color: var(--status-completed-foreground);
+  border: 1px solid var(--status-completed);
+}
+
+/* Ranking Card */
+.ranking-card {
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition: all var(--duration-default) var(--ease-default);
+}
+
+.ranking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ranking-card.top-1 {
+  border: 2px solid var(--medal-gold);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.ranking-card.top-2 {
+  border: 2px solid var(--medal-silver);
+  box-shadow: var(--shadow-md);
+}
+
+.ranking-card.top-3 {
+  border: 2px solid var(--medal-bronze);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Level Badge */
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm) var(--space-md);
+  font: var(--font-stat-small);
+  font-weight: 700;
+  border: 2px solid currentColor;
+}
+
+.level-beginner {
+  background: var(--level-beginner-light);
+  color: var(--level-beginner-dark);
+  border-color: var(--level-beginner);
+}
+
+.level-intermediate {
+  background: var(--level-intermediate-light);
+  color: var(--level-intermediate-dark);
+  border-color: var(--level-intermediate);
+}
+
+.level-advanced {
+  background: var(--level-advanced-light);
+  color: var(--level-advanced-dark);
+  border-color: var(--level-advanced);
+}
+
+.level-expert {
+  background: var(--level-expert-light);
+  color: var(--level-expert-dark);
+  border-color: var(--level-expert);
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+
+@keyframes badge-unlock {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes level-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--badge-new-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes celebrate {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Respeitar preferências do usuário */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .badge-unlock,
+  .badge-new,
+  .level-up {
+    animation: none !important;
+  }
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible */
+.focus-visible-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
+  border-color: var(--ring);
+}
